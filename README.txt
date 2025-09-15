@@ -77,3 +77,23 @@ results/{env}{agent}{date}_{seed}.csv
 - Rolling average vs. episode.  
 - Comparison of algorithms (baseline vs. DQN vs. improvements).  
 
+## Reproducibility:
+
+- Fixed seeds logged for every run.  
+- Results stored in `results/` (not in repo).  
+- Training scripts runnable from CLI with flags for env, episodes, seed.  
+- Plots generated from logs via notebooks/scripts.  
+
+---
+
+## Checklist
+
+- [x] Repo scaffold & README  
+- [ ] Random baseline agent on CartPole  
+- [ ] Tabular Q-learning (optional)  
+- [ ] Linear approximation agent  
+- [ ] DQN on CartPole  
+- [ ] Double DQN / Prioritized Replay  
+- [ ] LunarLander attempt  
+- [ ] Final plots & write-up 
+
