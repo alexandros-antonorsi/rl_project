@@ -23,7 +23,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 ---
 
 ## Repo Structure
-.
+```
 ├── src/
 │ ├── agents/ # simple baseline agents 
 │ └── dqn/ # DQN implementation 
@@ -34,6 +34,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 ├── README.md # project description and instructions 
 ├── requirements.txt # Python dependencies
 └── .gitignore # ignore rules (includes .venv, results/, pycache)
+```
 
 ## Roadmap & Milestones
 
