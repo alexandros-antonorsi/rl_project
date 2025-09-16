@@ -1,6 +1,6 @@
 # RL Keystone Project — Deep Q-Network from Scratch
 
-This project is my **keystone reinforcement learning project**, built independently alongside graduate coursework in mathematics. The goal is to demonstrate my ability to take a problem from start to finish: understanding the theory, implementing algorithms from scratch, running experiments in Gymnasium environments, and documenting reproducible results.
+This project is my endeavor into **reinforcement learning algorithms**, built independently alongside my graduate coursework in mathematics at UW Madison. The goal is to demonstrate my ability to learn a subject on my own and take a problem from start to finish: understanding the theory, implementing algorithms from scratch, running experiments in Gymnasium environments, and documenting reproducible results.
 
 ---
 
@@ -16,8 +16,8 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 
 ## Success Criteria
 
-- **CartPole-v1:** rolling average reward ≥475 over last 100 episodes.  
-- **LunarLander-v2:** demonstrate clear improvement over random baseline, even if not fully solved.  
+- **CartPole-v1:** rolling average reward of at least 475 over the last 100 episodes.  
+- **LunarLander-v2:** demonstrate clear improvement over a random baseline, even if not fully solved.  
 - **Documentation:** reproducible repo, with logs, plots, and a clear report.  
 
 ---
@@ -30,10 +30,10 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 ├── scripts/ # runnable training/evaluation scripts
 ├── notebooks/ # analysis/plotting notebooks 
 ├── tests/ # unit tests for components
-├── results/ # training logs, checkpoints, figures
-├── README.md # 
+├── results/ # training logs, checkpoints, figures (gitignored)
+├── README.md # project description and instructions 
 ├── requirements.txt # Python dependencies
-└── .gitignore # 
+└── .gitignore # ignore rules (includes .venv, results/, pycache)
 
 ## Roadmap & Milestones
 
@@ -42,7 +42,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
   - Random agent baseline script.  
 
 - **Weeks 4–5 (Sep 29–Oct 12):**  
-  - Optional tabular Q-learning on FrozenLake.  
+  - Tabular Q-learning on FrozenLake.  
 
 - **Weeks 6–7 (Oct 13–26):**  
   - Linear approximation Q-learning on CartPole.  
@@ -56,8 +56,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
   - Experiment with Double DQN or Prioritized Replay.  
 
 - **Weeks 13–15 (Dec 1–18):**  
-  - Save final results, generate plots, polish README + short report.  
-  - Tag repo release `v1.0`.  
+  - Save final results, generate plots, polish README + short report.   
 
 ---
 
@@ -66,7 +65,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 All training runs will record:
 - Episode number, total reward, episode length.  
 - Rolling average reward (last 100 episodes).  
-- Exploration rate (ε) and total steps.  
+- Exploration rate and total steps.  
 - Optional: loss values per update.  
 
 **Logging format:** CSV in `results/` with filename convention:  
