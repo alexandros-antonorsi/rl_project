@@ -1,6 +1,6 @@
 # RL Keystone Project — Deep Q-Network from Scratch
 
-This project is my endeavor into **reinforcement learning algorithms**, built independently alongside my graduate coursework in mathematics at UW Madison. The goal is to demonstrate my ability to learn a subject on my own and take a problem from start to finish: understanding the theory, implementing algorithms from scratch, running experiments in Gymnasium environments, and documenting reproducible results.
+This project is my endeavor into **reinforcement learning algorithms**, built independently in a single semester alongside my graduate coursework in mathematics at UW Madison. The goal is to demonstrate my ability to learn a subject on my own and take a problem from start to finish: understanding the theory, implementing algorithms from scratch, running experiments in Gymnasium environments, and documenting reproducible results.
 
 ---
 
@@ -36,7 +36,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 └── .gitignore # ignore rules (includes .venv, results/, pycache)
 ```
 
-## Roadmap & Milestones
+## Semester Roadmap & Milestones
 
 - **Weeks 2–3 (Sep 15–28):**  
   - Repo scaffold, README, logging conventions.  
@@ -70,7 +70,7 @@ All training runs will record:
 - Optional: loss values per update.  
 
 **Logging format:** CSV in `results/` with filename convention:  
-results/{env}{agent}{date}_{seed}.csv
+results/{env}\_{agent}\_{seed}\_{date}.csv
 
 **Figures:**  
 - Reward vs. episode curve.  
@@ -80,7 +80,7 @@ results/{env}{agent}{date}_{seed}.csv
 ## Reproducibility:
 
 - Fixed seeds logged for every run.  
-- Results stored in `results/` (not in repo).  
+- Results stored in `results/` 
 - Training scripts runnable from CLI with flags for env, episodes, seed.  
 - Plots generated from logs via notebooks/scripts.  
 
@@ -90,7 +90,7 @@ results/{env}{agent}{date}_{seed}.csv
 
 - [x] Repo scaffold & README  
 - [ ] Random baseline agent on CartPole  
-- [ ] Tabular Q-learning (optional)  
+- [ ] Tabular Q-learning  
 - [ ] Linear approximation agent  
 - [ ] DQN on CartPole  
 - [ ] Double DQN / Prioritized Replay  
