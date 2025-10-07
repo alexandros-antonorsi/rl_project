@@ -28,38 +28,13 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 │ ├── agents/ # simple baseline agents 
 │ └── dqn/ # DQN implementation 
 ├── scripts/ # runnable training/evaluation scripts
-├── notebooks/ # analysis/plotting notebooks 
+├── docs/ # final report, plots/figures, and sample logs
 ├── tests/ # unit tests for components
-├── results/ # training logs, checkpoints, figures (gitignored)
+├── results/ # training logs, checkpoints (gitignored)
 ├── README.md # project description and instructions 
 ├── requirements.txt # Python dependencies
 └── .gitignore # ignore rules (includes .venv, results/, pycache)
 ```
-
-## Semester Roadmap & Milestones
-
-- **Weeks 2–3 (Sep 15–28):**  
-  - Repo scaffold, README, logging conventions.  
-  - Random agent baseline script.  
-
-- **Weeks 4–5 (Sep 29–Oct 12):**  
-  - Tabular Q-learning on FrozenLake.  
-
-- **Weeks 6–7 (Oct 13–26):**  
-  - Linear approximation Q-learning on CartPole.  
-
-- **Weeks 8–10 (Oct 27–Nov 16):**  
-  - Core DQN (replay buffer, target network, epsilon schedule).  
-  - Solve CartPole.  
-
-- **Weeks 11–12 (Nov 17–30):**  
-  - Attempt LunarLander.  
-  - Experiment with Double DQN or Prioritized Replay.  
-
-- **Weeks 13–15 (Dec 1–18):**  
-  - Save final results, generate plots, polish README + short report.   
-
----
 
 ## Evaluation & Logging
 
@@ -70,7 +45,7 @@ All training runs will record:
 - Optional: loss values per update.  
 
 **Logging format:** CSV in `results/` with filename convention:  
-results/{env}\_{agent}\_{seed}\_{date}.csv
+results/{env}\_{agent}\_{date}\_{seed}.csv
 
 **Figures:**  
 - Reward vs. episode curve.  
@@ -89,9 +64,8 @@ results/{env}\_{agent}\_{seed}\_{date}.csv
 ## Checklist
 
 - [x] Repo scaffold & README  
-- [ ] Random baseline agent on CartPole  
-- [ ] Tabular Q-learning  
-- [ ] Linear approximation agent  
+- [x] Random baseline agent on CartPole  
+- [ ] Tabular Q-learning   
 - [ ] DQN on CartPole  
 - [ ] Double DQN / Prioritized Replay  
 - [ ] LunarLander attempt  
