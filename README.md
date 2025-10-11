@@ -1,6 +1,6 @@
-# RL Keystone Project — Deep Q-Network from Scratch
+# RL Project — Deep Q-Network from Scratch
 
-This project is my endeavor into **reinforcement learning algorithms**, built independently in a single semester alongside my graduate coursework in mathematics at UW Madison. The goal is to demonstrate my ability to learn a subject on my own and take a problem from start to finish: understanding the theory, implementing algorithms from scratch, running experiments in Gymnasium environments, and documenting reproducible results.
+This project is my endeavor into reinforcement learning algorithms, consisting of studying and implementating algorithms by scratch alongside my graduate mathematics coursework at UW Madison. The goal is to demonstrate my ability to learn a subject on my own and take a problem from start to finish: understanding the theory, implementing algorithms by hand, running experiments in Gymnasium environments, and documenting reproducible results.
 
 ---
 
@@ -9,8 +9,7 @@ This project is my endeavor into **reinforcement learning algorithms**, built in
 Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic control tasks from [Gymnasium](https://gymnasium.farama.org/):
 
 - **CartPole-v1** 
-- **LunarLander-v2**  
-- Experiment with **stability improvements** (Double DQN, Prioritized Experience Replay)  
+- **LunarLander-v2**   
 
 ---
 
@@ -25,8 +24,8 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 ## Repo Structure
 ```
 ├── src/
-│ ├── agents/ # simple baseline agents 
-│ └── dqn/ # DQN implementation 
+│ ├── agents/ # training agent class files
+│ └── dqn/ # network/buffer for dqn
 ├── scripts/ # runnable training/evaluation scripts
 ├── docs/ # final report, plots/figures, and sample logs
 ├── tests/ # unit tests for components
@@ -41,8 +40,7 @@ Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve classic contr
 All training runs will record:
 - Episode number, total reward, episode length.  
 - Rolling average reward (last 100 episodes).  
-- Exploration rate and total steps.  
-- Optional: loss values per update.  
+- Exploration rate and total steps.   
 
 **Logging format:** CSV in `results/` with filename convention:  
 results/{env}\_{agent}\_{date}\_{seed}.csv
@@ -54,9 +52,9 @@ results/{env}\_{agent}\_{date}\_{seed}.csv
 
 ## Reproducibility:
 
-- Fixed seeds logged for every run.  
+- Random seeds logged for every run.  
 - Results stored in `results/` 
-- Training scripts runnable from CLI with flags for env, episodes, seed.  
+- Training scripts runnable from CLI with flags for episodes, seed, and hyperparameters.  
 - Plots generated from logs via notebooks/scripts.  
 
 ---
@@ -64,10 +62,10 @@ results/{env}\_{agent}\_{date}\_{seed}.csv
 ## Checklist
 
 - [x] Repo scaffold & README  
-- [x] Random baseline agent on CartPole  
-- [ ] Tabular Q-learning   
+- [x] Random baseline agent on CartPole
+- [X] Finish Chapters 1-8 in Zhao's "Mathematical Foundations of Reinforcement Learning" 
+- [ ] Tabular Q-learning (on-policy) on FrozenLake 
 - [ ] DQN on CartPole  
-- [ ] Double DQN / Prioritized Replay  
-- [ ] LunarLander attempt  
+- [ ] DQN LunarLander attempt  
 - [ ] Final plots & write-up 
 
