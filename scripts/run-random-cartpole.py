@@ -37,7 +37,8 @@ for i in range(episodes):
 
     episode_log = [total_reward, step_count]
     log.loc[i+1]=episode_log
-    env.close()
+
+env.close()
 
 log.to_csv(f"results/cartpole_random_{date.today()}_seed{seed}.csv")
 

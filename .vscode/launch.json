@@ -14,8 +14,7 @@
             "console": "integratedTerminal",
             "python": "${workspaceFolder}/.venv/bin/python3.13",
             "args": [
-                    "--seed", "42",
-                    "--episodes", "5"
+                    
                 ]
         }
     ]
