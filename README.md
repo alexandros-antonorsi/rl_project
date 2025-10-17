@@ -64,7 +64,7 @@ results/{env}\_{agent}\_{date}\_{seed}.csv
 - [x] Repo scaffold & README  
 - [x] Random baseline agent on CartPole
 - [X] Finish Chapters 1-8 in Zhao's "Mathematical Foundations of Reinforcement Learning" 
-- [ ] Tabular Q-learning (on-policy) on FrozenLake 
+- [x] Tabular Q-learning (on-policy) on FrozenLake 
 - [ ] DQN on CartPole  
 - [ ] DQN LunarLander attempt  
 - [ ] Final plots & write-up 

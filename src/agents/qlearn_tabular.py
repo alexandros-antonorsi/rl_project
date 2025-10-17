@@ -37,7 +37,10 @@ class QLearnAgent:
         if self.rng.random() < self.epsilon:
             return self.env.action_space.sample()
         else: 
-            return int(np.argmax(self.q_table[curr_obs]))
+            #break ties randomly
+            max = np.max(self.q_table[curr_obs])
+            choices = np.nonzero(self.q_table[curr_obs] == max)[0]
+            return self.rng.choice(choices)
         
     def decay(self):
         self.epsilon = max(self.epsilon_final, self.epsilon-self.decay_rate)
