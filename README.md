@@ -1,34 +1,21 @@
-# RL Project — Deep Q-Network from Scratch
+# RL Project — Deep Q Networks w/ PyTorch
 
-This project is my endeavor into reinforcement learning algorithms and understanding both their theory and implementation, including how deep neural networks can be integrated to train an agent. The goal is to demonstrate my ability to explore a subject on my own and tackle a problem from start to finish: learning the theory, implementing algorithms by hand, training my agent in Gymnasium environments, and documenting reproducible results. This project was constructed simultaneously alongside my graduate studies in math at UW Madison.
-
----
-
-## Project Goal
-
-Implement and train a **Deep Q-Network (DQN)** in PyTorch to solve the classic control Gymnasium environment [CartPole-v1](https://gymnasium.farama.org/environments/classic_control/cart_pole/).
-
+This project is my introduction to Reinforcement Learning (RL) and neural networks. The goal is to learn the theory of RL algorithms, understand the implementation of Deep Q Networks (DQNs) using Pytorch, and creating reproducible code with documented results.
 
 ## Success Criteria
 
-- **Learning:** understand the theory of reinforcement learning algorithms as well as basic implementation of PyTorch neural networks
-- **Implementation:** implement Deep Q Learning on CartPole using a PyTorch deep neural network for the Q function
-- **Results:** rolling average reward of at least 475 over the last 100 episodes on CartPole-v1.   
-- **Documentation:** reproducible repo with logs, plots, and a clean report.  
-
-
----
+- **Learning:** Learned the theory of RL algorithms from reading Shiyu Zhao's "Mathematical Foundations of Reinforcement Learning"
+- **Implementation:** Implemented a DQN agent in PyTorch to solve the classic control Gymnasium environment [CartPole-v1](https://gymnasium.farama.org/environments/classic_control/cart_pole/).
+- **Results:** DQN agent achieved max reward (500) over the last 100 episodes on CartPole-v1.   
+- **Documentation:** Reproducible repo code and a polished final report detailing results.  
 
 ## Repo Structure
 ```
-├── src/
-│ ├── agents/ # training agent class files
-│ └── dqn/ # network/buffer for dqn
-├── scripts/ # runnable training/evaluation scripts
+├── agents/ # agent class files
+├── scripts/ # training scripts
 ├── docs/ # final report, plots/figures, and sample logs
-├── tests/ # unit tests for components
-├── results/ # training logs, checkpoints (gitignored)
-├── README.md # project description and instructions 
+├── results/ # training logs (gitignored)
+├── README.md  
 ├── requirements.txt # Python dependencies
 └── .gitignore # ignore rules (includes .venv, results/, pycache)
 ```
@@ -62,7 +49,7 @@ results/{env}\_{agent}\_{date}\_{seed}.csv
 - [x] Random baseline agent on CartPole
 - [X] Read Chapters 1-8 in Zhao's "Mathematical Foundations of Reinforcement Learning" 
 - [x] Tabular Q-learning warm-up on FrozenLake 
-- [ ] PyTorch basics
+- [X] PyTorch basics
 - [ ] DQN on CartPole   
 - [ ] Final plots & write-up 
 

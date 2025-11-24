@@ -3,7 +3,7 @@ import numpy as np
 import argparse
 import pandas as pd
 from datetime import date
-from src.agents.qlearn_tabular import QLearnAgent
+from agents.qlearn_tabular import QLearnAgent
 
 #input training arguments and hyperparameters from CLI
 parser = argparse.ArgumentParser()
