@@ -40,8 +40,8 @@ for i in range(episodes):
 
 env.close()
 
-log.to_csv(f"results/cartpole_random_{date.today()}_seed{seed}.csv")
+log.to_csv(f"logs/cartpole_random_{date.today()}_seed{seed}.csv")
 
 print(f"Finished {episodes} episodes on CartPole-v1 (seed={seed})")
 print("Mean reward: ",np.sum([log.loc[i+1, 'total_reward'] for i in range(episodes)])/episodes)
-print(f"Results saved to results/cartpole_random_{date.today()}_seed{seed}.csv")
+print(f"Results saved to logs/cartpole_random_{date.today()}_seed{seed}.csv")
