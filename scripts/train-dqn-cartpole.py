@@ -12,7 +12,7 @@ from collections import namedtuple, deque
 
 #input training arguments and hyperparameters from CLI
 parser = argparse.ArgumentParser()
-parser.add_argument("--seed", help="seed for rng", type=int, default=25)
+parser.add_argument("--seed", help="seed for rng", type=int, default=None)
 parser.add_argument("--learn", help="learning rate", type=float, default=3e-4)
 parser.add_argument("--e_init", help="initial exploration rate", type=float, default=0.9)
 parser.add_argument("--e_final", help="final exploration rate", type=float, default=0.01)
@@ -46,11 +46,16 @@ class ReplayBuffer(object):
 env = gym.make("CartPole-v1")
 
 #establish universal seed
-rng = random.Random(seed)
-env.reset(seed=seed)
-env.action_space.seed(seed)
-env.observation_space.seed(seed)
-torch.manual_seed(seed)
+if seed is not None:
+    rng = random.Random(seed)
+    env.reset(seed=seed)
+    env.action_space.seed(seed)
+    env.observation_space.seed(seed)
+    torch.manual_seed(seed)
+else:
+    rng = random.Random()
+    env.reset()
+
 if torch.cuda.is_available():
     torch.cuda.manual_seed(seed)
 
@@ -63,7 +68,7 @@ device = torch.device(
 
 
 if torch.cuda.is_available() or torch.backends.mps.is_available():
-    n_eps = 600
+    n_eps = 300
 else:
     n_eps = 50
 
@@ -88,6 +93,7 @@ for i in range(n_eps):
 
     #logging variables
     total_reward = 0
+    episode_length = 0
 
     while not (terminated or truncated):
         action = dqn.choose_action(curr_obs, epsilon)
@@ -111,18 +117,22 @@ for i in range(n_eps):
         curr_obs = next_obs
 
         total_reward += reward.item()
+        episode_length += 1
         num_iter +=1
 
     epsilon = decay(num_iter)
 
-    print(i, total_reward)
-
-    episode_log = [total_reward]
+    episode_log = [total_reward, episode_length]
     log.iloc[i] = episode_log
 
 env.close()
+
+log.to_csv(f"logs/cartpole_dqn_{seed}.csv")
+
+
 print(f"Finished training {n_eps} episodes on CartPole-v1 (seed={seed})")
-print("Average reward over last 100 eps: ",sum(log['total_reward'][-100:])/100)
+print("Average reward over last 10 eps: ",sum(log['total_reward'][-10:])/10)
+print(f"Results saved to logs/cartpole_dqn_{seed}.csv")
 
     
 

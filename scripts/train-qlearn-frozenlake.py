@@ -2,7 +2,6 @@ import gymnasium as gym
 import numpy as np
 import argparse
 import pandas as pd
-from datetime import date
 from agents.qlearn_tabular import QLearnAgent
 
 #input training arguments and hyperparameters from CLI
@@ -58,9 +57,9 @@ for i in range(n_eps):
 
 env.close()
 
-log.to_csv(f"logs/frozenlake_qlearn_{date.today()}_seed{seed}.csv")
+log.to_csv(f"logs/frozenlake_qlearn_{seed}.csv")
 
 print(f"Finished training {n_eps} episodes on FrozenLake-v1 (seed={seed})")
 print("Average reward over last 100 eps: ",np.sum(log['total_reward'][-100:])/100)
-print(f"Results saved to logs/frozenlake_qlearn_{date.today()}_seed{seed}.csv")
+print(f"Results saved to logs/frozenlake_qlearn_{seed}.csv")
 
