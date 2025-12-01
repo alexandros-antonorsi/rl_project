@@ -14,7 +14,7 @@ This project is my introduction to reinforcement learning and neural networks. M
 ├── logs/ # training logs (gitignored)
 ├── README.md # project description and writeup
 ├── requirements.txt # Python dependencies
-└── .gitignore # ignore rules (includes .venv, results/, pycache)
+└── .gitignore # ignore rules (includes .venv, logs/, pycache)
 ```
 
 ## Reproducibility:
