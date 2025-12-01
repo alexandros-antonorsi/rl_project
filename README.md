@@ -30,7 +30,9 @@ This project is my introduction to reinforcement learning and neural networks. M
 
 I built my way up to implementing DQN by first training a tabular Q-learning agent on the [FrozenLake-v1](https://gymnasium.farama.org/environments/toy_text/frozen_lake/) environment, where the agent is tasked with navigating a 4x4 grid littered with holes to reach the end goal. I trained my agent on the ```slippery=True``` variation, which creates a stochastic environment on the lake where each move has a 30% chance to result in a different direction than what was selected. This environment proves challenging to optimize for, as the reward schedule is very sparse and it can take many episodes until the agent receives its first reward. To train the agent, I used a standard on-policy tabular Q-learning approach w/ epsilon-greedy exploration (linear decay schedule), with the update equation 
 
-$$\begin{aligned} q_{t+1}\left(s_t, a_t\right) & =q_t\left(s_t, a_t\right)-\alpha\left[q_t\left(s_t, a_t\right)-\left(r_{t+1}+\gamma \max_{a} q_t\left(s_{t+1}, a\right)\right)\right] \\ q_{t+1}(s, a) & =q_t(s, a), \quad \text { for all }(s, a) \neq\left(s_t, a_t\right)\end{aligned}$$ 
+$$q_{t+1}\left(s_t, a_t\right)=q_t\left(s_t, a_t\right)-\alpha\left[q_t\left(s_t, a_t\right)-\left(r_{t+1}+\gamma \max_{a} q_t\left(s_{t+1}, a\right)\right)\right]$$
+
+$$q_{t+1}(s, a)=q_t(s, a), \quad \text { for all }(s, a) \neq\left(s_t, a_t\right)$$ 
 
 Here $\alpha$ is a fixed learning rate, $\gamma$ is the discount rate, $r_t$ are the rewards obtained at each step, $s_t$ are the states (position on the grid), and $a_t$ are the actions (up, down, left, or right). All hyperparameters including learning rate, discount rate, and epsilon decay schedule are passed to the training script via CLI. The following plot shows our results of training for 100,000 episodes on ```seed=25```: 
 
