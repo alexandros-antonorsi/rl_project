@@ -1,6 +1,5 @@
 .DS_Store
 logs/
 .venv/
-__init__.py
 __pycache__
 .vscode
